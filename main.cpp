@@ -4,6 +4,14 @@
 #include "repartidor.h"
 #include "mesa.h"
 #include "baraja.h"
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
 int main(){
-	return 0;
+	int opcion;
+	char r= 's';
+	while(r=='s'||r=='S'){
+		
+	}
 }
