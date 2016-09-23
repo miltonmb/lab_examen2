@@ -1,4 +1,8 @@
+#pragma once
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
+using namespace std;
 class persona{
 	private:
 		string nombre;
@@ -7,4 +11,4 @@ class persona{
 	public:
 		persona(string,int,string);
 		~persona();
-}
+};
