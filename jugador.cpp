@@ -9,6 +9,10 @@ jugador::jugador(string nombre,int edad,string identidad,string procedencia,stri
 
 }
 
+jugador::jugador(){
+	
+}
+
 jugador::~jugador(){
 
 }

@@ -12,6 +12,9 @@ mesa::mesa(int n,string t){
 	tipo = t;
 }
 
+mesa::mesa(){
+
+}
 mesa::~mesa(){
 
 }
@@ -24,8 +27,17 @@ void mesa::setJugador(jugador* jug){
 	jugad = jug;
 }
 
+void mesa::setNum(int n){
+	num = n;
+}
+
+void mesa::setTipo(string t){
+	tipo = t;
+}
+
 string mesa::toString()const{
 	stringstream ss;
 	ss << "MESA NUM: "<<num;
 	return ss.str();
 }
+

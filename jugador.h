@@ -12,6 +12,7 @@ class jugador:public persona{
 		double dinero;
 	public:
 		public:
+		jugador();
 		jugador(string,int,string,string,string,double);
 		~jugador();
 };

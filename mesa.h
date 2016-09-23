@@ -13,10 +13,13 @@ class mesa{
 		repartidor* repart;
 		jugador* jugad;
 	public:
+		mesa();
 		mesa(int,string);
 		~mesa();
 		void setRepartidor(repartidor*);
 		void setJugador(jugador*);
+		void setNum(int);
+		void setTipo(string);
 		string toString()const;
 
 };

@@ -10,6 +10,8 @@ class baraja{
 	private:
 		vector<carta*> bar;
 	public:
+		baraja();
+		~baraja();
 		void llenarVector();
 		carta* darCarta();
 };

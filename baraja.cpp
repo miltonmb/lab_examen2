@@ -7,7 +7,7 @@
 #include "carta.h"
 using namespace std;
 
-void baraja::llenarVector(){
+baraja::baraja(){
 	for (int i = 0; i < 4; ++i){
 		for (int j = 1; j <= 13; ++j){
 			if(i==0){
@@ -28,6 +28,13 @@ void baraja::llenarVector(){
 			}
 		}
 	}
+}
+
+baraja::~baraja(){
+
+}
+
+void baraja::llenarVector(){
 }
 
 carta* baraja::darCarta(){

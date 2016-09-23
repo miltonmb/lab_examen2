@@ -11,4 +11,7 @@ class persona{
 	public:
 		persona(string,int,string);
 		~persona();
+		string getNombre();
+		string getIdentidad();
+		virtual string toString()const;
 };

@@ -12,3 +12,15 @@ persona::persona(string n,int e,string id){
 persona::~persona(){
 
 }
+
+string persona::getNombre(){
+	return nombre;
+}
+
+string persona::getIdentidad(){
+	return identidad;
+}
+
+string persona::toString()const{
+	return "";
+}

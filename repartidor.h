@@ -10,9 +10,9 @@ class repartidor:public persona{
 		private:
 			string dificultad;
 			double dinero;
-			baraja bara;
+			baraja* bara;
 		public:
-			repartidor(string,int,string,string,double,baraja);
+			repartidor(string,int,string,string,double);
 			~repartidor();
 
 
