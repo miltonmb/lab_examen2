@@ -13,3 +13,7 @@ repartidor::repartidor(string nombre,int edad,string identidad,string dificultad
 repartidor::~repartidor(){
 
 }
+
+baraja* repartidor::getBaraja(){
+	return bara;
+}

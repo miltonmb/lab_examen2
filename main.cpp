@@ -12,7 +12,7 @@ using namespace std;
 int main(){
 	string nombre;
 	int edad;
-	string identidad;
+	string id;
 	vector<persona*> personas;
 	vector<mesa*> mesas;
 	int opcion;
@@ -31,38 +31,74 @@ int main(){
 				string procedencia;
 				string apodo;
 				double dinero;
+				cout << "---JUGADOR---\n";
 				cout << "Ingrese nombre: ";
 				cin >> nombre;
+				cout << endl;
 				cout << "Ingresa edad: ";
 				cin >> edad;
 				cout << "Ingrese la identidad: ";
-				cin >> identidad;
-				if(identidad.size()>4 && identidad.size()<3){
+				cin >> id;
+				if(id.size()==4){
 					cout << "Ingrese la procedencia: ";
 					cin >> procedencia;
 					cout << "Ingrese el apodo: ";
 					cin >> apodo;
 					cout << "Ingrese el monto de dinero: ";
 					cin >> dinero;
-					jugador* j= new jugador(nombre,edad,identidad,procedencia,apodo,dinero);
+					jugador* j= new jugador(nombre,edad,id,procedencia,apodo,dinero);
 					personas.push_back(j);
 				}
 				break;
 			}
 
 			case 2:{
+				cout << "---LOGIN---\n";
 				jugador* temp= new jugador();
 				cout << "Ingrese su nombre: ";
 				cin >> nombre;
 				cout << "Ingrese su identidad: ";
-				cin >> identidad;
+				cin >> id;
 				for (int i = 0; i < personas.size(); ++i){
 					if(dynamic_cast<jugador*>(personas.at(i))!= NULL){
-						if (personas.at(i)->getNombre()==nombre && personas.at(i)->getIdentidad()==identidad){
+						if (personas.at(i)->getNombre()==nombre && personas.at(i)->getIdentidad()==id){
 							temp = dynamic_cast<jugador*>(personas.at(i));
+							mesa* tempM = new mesa();
+							cout << "---BIENVENIDO AL CASINO TIO!---\n";
+							carta* una = new carta();
+							carta* dos = new carta();
+							carta* unados= new carta();
+							carta* dosdos= new carta();
+							for (int i = 0; i < mesas.size(); ++i){
+								if(mesas.at(i)->getJugador()->getNombre()==temp->getNombre()){
+									tempM = mesas.at(i);
+									int turno = 1;
+									if(turno = 1){
+										double cant;
+										cout << "Ingrese la cantidad: ";
+										cin >> cant;
+										temp -> setDinero(temp->getDinero()-cant);
+										una = tempM->getRepartidor()->getBaraja()->darCarta();
+										dos = tempM->getRepartidor()->getBaraja()->darCarta();
+										turno++;
+									}
+									else if(turno==2){
+										unados = tempM->getRepartidor()->getBaraja()->darCarta();
+										dosdos = tempM->getRepartidor()->getBaraja()->darCarta();
+									}
+									int uno = una->getNum()+dos->getNum();
+									int dos = unados->getNum()+dosdos->getNum();
+									if(uno <=21){
+										cout << "GANO EL JUGADOR";
+									}
+									else if(dos <=21){
+										cout << "GANO EL REPARTIDOR";
+									}
+								}
+							}
 						}
 					}else if(dynamic_cast<administrador*>(personas.at(i)) != NULL){
-						if(personas.at(i)->getNombre()==nombre && personas.at(i)->getIdentidad()==identidad){
+						if(personas.at(i)->getNombre()==nombre && personas.at(i)->getIdentidad()==id){
 							cout << "---BIENVENIDO ADMINISTRADOR---\n";
 							int op;
 							char resp = 's';
@@ -184,6 +220,7 @@ int main(){
 				break;
 			}
 			case 3:{
+				cout << "---REPARTIDOR---\n";
 				string dificultad;
 				double dinero;
 				cout << "Ingrese nombre: ";
@@ -191,8 +228,8 @@ int main(){
 				cout << "Ingresa edad: ";
 				cin >> edad;
 				cout << "Ingrese la identidad: ";
-				cin >> identidad;
-				if(identidad.size()>4 && identidad.size()<3){
+				cin >> id;
+				if(id.size()==4){
 					int opD;
 					cout << "Que dificultad tiene: \n";
 					cout << "1.Dificil\n";
@@ -210,13 +247,14 @@ int main(){
 					}
 					cout << "Ingrese el dinero: ";
 					cin >> dinero;
-					repartidor* rep = new repartidor(nombre,edad,identidad,dificultad,dinero);
+					repartidor* rep = new repartidor(nombre,edad,id,dificultad,dinero);
 					personas.push_back(rep);
 				}
 				break;
 			}
 
 			case 4:{
+				cout << "---ADMINISTRADOR---\n";
 				int anios;
 				string rango;
 				double sueldo;
@@ -226,8 +264,8 @@ int main(){
 				cout << "Ingresa edad: ";
 				cin >> edad;
 				cout << "Ingrese la identidad: ";
-				cin >> identidad;
-				if(identidad.size()>4 && identidad.size()<3){
+				cin >> id;
+				if(id.size()==4){
 					cout << "Ingrese los años de experiencia: ";
 					cin >> anios;
 					cout << "Que rango tiene: \n";
@@ -246,7 +284,7 @@ int main(){
 					}
 					cout << "Que sueldo tiene: ";
 					cin >> sueldo;
-					administrador* adm = new administrador(nombre,edad,identidad,anios,rango,sueldo);
+					administrador* adm = new administrador(nombre,edad,id,anios,rango,sueldo);
 				}
 				break;
 

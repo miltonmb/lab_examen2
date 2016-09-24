@@ -10,6 +10,7 @@ class persona{
 		string identidad;
 	public:
 		persona(string,int,string);
+		persona();
 		~persona();
 		string getNombre();
 		string getIdentidad();

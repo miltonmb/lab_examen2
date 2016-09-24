@@ -9,6 +9,8 @@ class carta{
 		string simbolo;
 		string color;
 	public:
+		carta();
 		carta(int,string,string);
 		~carta();
+		int getNum();
 };

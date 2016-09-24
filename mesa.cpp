@@ -35,6 +35,14 @@ void mesa::setTipo(string t){
 	tipo = t;
 }
 
+jugador* mesa::getJugador(){
+	return jugad;
+}
+
+repartidor* mesa::getRepartidor(){
+	return repart;
+}
+
 string mesa::toString()const{
 	stringstream ss;
 	ss << "MESA NUM: "<<num;

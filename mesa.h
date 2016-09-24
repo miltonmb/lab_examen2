@@ -18,6 +18,8 @@ class mesa{
 		~mesa();
 		void setRepartidor(repartidor*);
 		void setJugador(jugador*);
+		jugador* getJugador();
+		repartidor* getRepartidor();
 		void setNum(int);
 		void setTipo(string);
 		string toString()const;

@@ -13,3 +13,11 @@ carta::carta(int n,string s,string c){
 carta::~carta(){
 
 }
+
+carta::carta(){
+
+}
+
+int carta::getNum(){
+	return num;
+}

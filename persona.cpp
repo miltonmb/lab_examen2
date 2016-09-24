@@ -13,6 +13,10 @@ persona::~persona(){
 
 }
 
+persona::persona(){
+	
+}
+
 string persona::getNombre(){
 	return nombre;
 }

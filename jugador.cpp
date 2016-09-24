@@ -16,3 +16,9 @@ jugador::jugador(){
 jugador::~jugador(){
 
 }
+double jugador::getDinero(){
+	return dinero;
+}
+void jugador::setDinero(double d){
+	dinero = d;
+}

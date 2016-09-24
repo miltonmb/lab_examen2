@@ -25,4 +25,7 @@ baraja.o:	baraja.h baraja.cpp
 mesa.o:	mesa.h mesa.cpp
 		g++ -c mesa.cpp
 
+clean:
+		rm*.o main
+
 

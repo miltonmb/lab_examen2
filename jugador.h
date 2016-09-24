@@ -3,6 +3,7 @@
 #include <string>
 #include <stdio.h>
 #include "persona.h"
+#include "carta.h"
 using namespace std;
 
 class jugador:public persona{
@@ -11,8 +12,9 @@ class jugador:public persona{
 		string apodo;
 		double dinero;
 	public:
-		public:
 		jugador();
 		jugador(string,int,string,string,string,double);
 		~jugador();
+		double getDinero();
+		void setDinero(double);
 };

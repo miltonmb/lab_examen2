@@ -14,6 +14,7 @@ class repartidor:public persona{
 		public:
 			repartidor(string,int,string,string,double);
 			~repartidor();
+			baraja* getBaraja();
 
 
 
